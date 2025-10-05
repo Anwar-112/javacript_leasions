@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form action="" name="rgs">
+
+        <input type="text" name="fullname" placeholder="Enter your name"> <br>
+        gender: <br>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female <br>
+        Distric: <br>
+        <select name="Distric" id="">
+            <option value="">Select one</option>
+            <option> Dhaka</option>
+            <option> Sylet</option>
+            <option> Rajsahi</option>
+            <option>Rongpur</option>
+            <option>Khulna</option>
+        
+        </select> <br>
+        Address: <br>
+        <textarea name="Address" id="" placeholder="Enter your Address"></textarea> <br>
+        <button onclick="form_handle()" type="button">Submit</button> <br>
+    </form> 
+    
+    <h3 id = "reg"></h3>
+    <script>
+        function form_handle(){
+            let fname = document.rgs.fullname.value;
+            let gender = document.rgs.gender.value;
+            let Distric = document.rgs.Distric.value;
+            let Address = document.rgs.Address.value;
+
+            //alert(fname + " " + gender + " " + Distric);
+            pers_details = "Name:  "+ fname  + " <br> gender: " + gender +" <br>District: " + Distric +" <br> Address " +Address
+           // console.log(pers_details)
+           document.getElementById("reg").innerHTML= "Personal details <br>"+ pers_details;
+
+        }
+         
+    </script>
+
+</body>
+</html>

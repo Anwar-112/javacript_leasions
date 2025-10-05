@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h3>Sum Function</h3>
+    <div id = "display"></div>
+    <script>
+        function SumFunc(x,y){
+            x = prompt ("Enter your Frist num");
+            y = prompt ("Enter your secound num");
+            x = parseInt(x);
+            y = parseInt(y);
+            z = x + y;
+            document.getElementById("display").innerHTML= "Total is:"+ z ;
+
+        }
+        
+    </script>
+    <button onclick="SumFunc()">Sum</button>
+    <button onclick="SumFunc()">Multiplication</button>
+</body>
+</html>
