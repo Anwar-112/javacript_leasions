@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body>
+    <h3>Login Form</h3>
+    <form name="loginForm">
+        <input type="text" name="fullname" placeholder="Enter your name"> <br>
+        <input type="password" name="password" placeholder="Enter password"> <br>
+        <input type="password" name="con_password" placeholder="Enter confirm password"> <br>
+        <button type="button" onclick="LoginValidation()">Login</button>
+        <p id="display"></p>
+    </form>
+
+    <script>
+        function LoginValidation(){
+            let fullname = document.loginForm.fullname.value.trim();
+            let password = document.loginForm.password.value;
+            let con_password = document.loginForm.con_password.value;
+            let errmsg = "";
+
+            if(fullname === ""){
+                errmsg += "Enter your Fullname\n";
+            } else if(fullname.length < 5 || fullname.length > 10){
+                errmsg += "Full name must be between 5 and 10 characters\n";
+            }
+
+            if(password === ""){
+                errmsg += "Enter your password\n";
+            }
+
+            if(con_password === ""){
+                errmsg += "Enter your confirm password\n";
+            }
+
+            if(password !== "" && con_password !== "" && password !== con_password){
+                errmsg += "Passwords do not match\n";
+            }
+
+            if(errmsg !== ""){
+                alert(errmsg);
+            } else {
+                document.getElementById("display").innerHTML = "Login Successfull"
+            }
+        }
+    </script>
+</body>
+</html>
