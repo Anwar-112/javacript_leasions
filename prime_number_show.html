@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prime Numbers in Range</title>
+</head>
+<body>
+  <script>
+    let n = prompt("Show primes up to:");
+    n = parseInt(n);
+
+    document.write("Prime numbers up to " + n + ":<br>");
+
+    for (let num = 2; num <= n; num++) {
+      let isPrime = true;
+
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      if (isPrime) {
+        document.write(num + " ");
+      }
+    }
+  </script>
+</body>
+</html>
