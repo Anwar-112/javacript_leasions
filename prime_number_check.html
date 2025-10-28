@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Check</title>
+</head>
+<body>
+  <script>
+    let input = prompt("একটি ধনাত্মক পূর্ণসংখ্যা দিন (prime চেক করার জন্য):");
+    let num = Number(input);
+
+    // ভ্যালিডেশন
+    if (!Number.isInteger(num) || num < 0 || input === null || input.trim() === "") {
+      document.write("ভুল ইনপুট — অনুগ্রহ করে একটি বৈধ পূর্ণসংখ্যা দিন।");
+    } else {
+      if (num < 2) {
+        document.write(num + " prime নয়। (2 বা তার বেশি হলে prime হওয়ার সম্ভাবনা থাকে)");
+      } else {
+        let isPrime = true;
+        let limit = Math.floor(Math.sqrt(num));
+        for (let i = 2; i <= limit; i++) {
+          if (num % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          document.write("Number " + num + " is a PRIME number.");
+        } else {
+          document.write("Number " + num + " is NOT a prime number.");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
