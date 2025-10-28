@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Show primes up to:");
+        n = parseInt(n);
+        for(let num=2; num<=n; num++){
+            let isPrime = true;
+            
+            for(let i = 2; i<=Math.sqrt(num); i++){
+                if(num % i === 0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(Isprime){
+                document.write(num + " ");
+            }
+        }
+    </script>
+</body>
+</html>
