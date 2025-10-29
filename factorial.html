@@ -6,16 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let num = 5;
-        let fact = 1;
-        for(let i =1; num>=i;i++){
-            fact*=i;
-        }
-        document.write(fact);
+    <h1>Factorial Number Counting:</h1>
+    <input type="text" id="number" placeholder="Enter your number">
+    <button type="button" onclick="factNum()">Check Now</button>
+    <p id="result"></p>
 
+    <script>
+        function factNum(){
+            let num = document.getElementById("number").value;
+            num = Number(num);
+            let fact = 1;
+            for(let i = 1; i<= num; i++){
+                fact*= i;
+            }
+            document.getElementById("result").innerHTML = "Factorial Of Number " + num + " is:" + fact;
+
+        }
     </script>
 </body>
 </html>
-
-
